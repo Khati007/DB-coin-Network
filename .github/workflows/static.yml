@@ -1,43 +1,76 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/dbcoin-logo.ico" />
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    <!-- Load Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    <title>DB Coin - Cryptocurrency</title>
+    <meta
+      name="description"
+      content="DB Coin - The future of decentralized finance, built for the people."
+    />
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="DB Coin - Cryptocurrency" />
+    <meta
+      property="og:description"
+      content="DB Coin - The future of decentralized finance, built for the people."
+    />
+    <meta property="og:image" content="/dbcoin-banner.jpg" />
+    <meta property="og:url" content="/" />
+    <meta property="og:type" content="website" />
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DB Coin - Cryptocurrency" />
+    <meta
+      name="twitter:description"
+      content="DB Coin - The future of decentralized finance, built for the people."
+    />
+    <meta name="twitter:image" content="/dbcoin-banner.jpg" />
+
+    <!-- Preload Image -->
+    <link rel="preload" fetchpriority="high" as="image" href="./dbcoin-logo.webp" type="image/webp" />
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #0d1117;
+        color: #e6edf3;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+      }
+      .preloader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      .img {
+        margin: auto;
+        max-width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="preloader">
+        <img class="img" src="./dbcoin-logo.webp" alt="DB Coin logo" />
+      </div>
+    </div>
+
+    <script src="./scripts/calculate-height.js" defer></script>
+  </body>
+</html>
